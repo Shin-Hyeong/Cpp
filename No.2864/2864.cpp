@@ -40,10 +40,5 @@ int main() {
     maxNum2 = stoi(num4);
 
     cout << minNum1 + minNum2 << " " << maxNum1 + maxNum2 << "\n";
-    
-
-
-    
-
     return 0;
 }

@@ -4,9 +4,9 @@ using namespace std;
 int main() {
     int kg, a, b; //a : 5Kg, b : 3Kg
     cin >> kg;
-    a = kg / 5; // 입력 Kg를 5로 나눔.
+    a = kg / 5; // 입력 Kg를 5로 나눈 몫.
     while(1){
-        if(a < 0){ //5로 나눈 값이 음수이면  -1
+        if(a < 0){ //5로 나눈 몫이 음수이면  -1 
             cout << "-1\n";
             return 0;
         }
@@ -14,7 +14,7 @@ int main() {
             b = (kg -(5 * a)) / 3;    // 3Kg짜리 개수
             break;
         }
-        a--; //5로 나누고 3으로 안 나누어지면 5를 줄임
+        a--; //5로 나누고 3으로 처음 나누었던 몫을 -1 감소
     }
     cout << a + b; 
     return 0;

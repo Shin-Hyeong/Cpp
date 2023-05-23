@@ -12,13 +12,11 @@ int main() {
     }
 
     sort(time, time + N);
-    plusTime[0] = time[0];
-    total = plusTime[0];
+    total = plusTime[0] = time[0];
 
     for (int i = 1; i < N; i++)
     {
-        plusTime[i] = plusTime[i - 1] + time[i];
-        total += plusTime[i];
+        total += plusTime[i] = plusTime[i - 1] + time[i];
     }
 
     cout << total <<"\n";

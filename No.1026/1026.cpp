@@ -5,6 +5,9 @@ using namespace std;
 bool desc(int i, int j) { return j < i;}
 
 int main () {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL); cout.tie(NULL);
+    
     int N, total = 0;
     cin >> N;
     int A[N], B[N], B1[N];
@@ -29,4 +32,3 @@ int main () {
 
     return 0;
 }
-

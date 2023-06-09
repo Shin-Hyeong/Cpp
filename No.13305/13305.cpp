@@ -18,6 +18,9 @@ int main() {
         price1[1] = price[i];
     }
 
+    sort(distance1, distance1 + (N - 1));
+    sort(price1, price1 + (N + 1));
+    
     int payment = price[0] * distance[0];
 
     return 0;

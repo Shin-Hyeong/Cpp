@@ -37,7 +37,7 @@ int main () {
         reverse(temp.begin(), temp.end());
         if(mid_index != -1) answer += mid_index + 'A';
         answer += temp;
-        cout << answer << "\n";
+        cout << answer << "\n"; 
     }
 
     return 0;

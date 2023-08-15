@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+#include <queue>
 #include <algorithm>
 using namespace std;
 
@@ -7,36 +7,44 @@ int main () {
     ios::sync_with_stdio(false);
     cin.tie(NULL); cout.tie(NULL);
 
-    int num, docNum, prio, a;
-    int inCount = 0, outCount = 0;
-    vector<int> vec;
+    int count = 0;
+    int testNum, index, value;
+    cin >> testNum;
+    
+    int docNum, order, ipt;
 
-    cin >> num;
-    while(num--){
-        cin >> docNum >> prio;
-
-        /*vector 입력*/
+    while(testNum--){
+        count = 0;
+        cin >> docNum >> order;
+        /*큐 생성*/
+        queue<pair<int, int>> que;
+        priority_queue<int> priQue;
+        /*큐에 우선순위 입력*/
         for(int i = 0; i < docNum; i++){
-             cin >> a;
-             vec.push_back(a);
+            cin >> ipt;
+            que.push({i, ipt});
+            priQue.push(ipt);
         }
+        while(!que.empty()){
+            /*큐의 앞부분 저장*/
+            index = que.front().first;
+            value = que.front().second;
+            que.pop();
 
-        /*자신보다 우선순위가 높은게 있으면 뒤로 이동*/
-        while(!vec.empty()){
-            if(vec.front() < *max_element(vec.begin() + 1, vec.end())){
-                vec.push_back(vec.front());
-                vec.erase(vec.begin());
+            /*큐와 우선순위가 같다면 pop*/
+            if(priQue.top() == value){
+                priQue.pop();
+                count++;
+                /*궁금한 인덱스와 동일하면 출력*/
+                if(index == order){
+                    cout << count << "\n";
+                    break;
+                }
             }
-            else{
-                cout << vec.front() << " ";
-                vec.erase(vec.begin());
-            }
+            /*큐와 우선순위가 다르면 다시 큐에 push*/
+            else que.push({index, value});
         }
-        cout << "\n";
-        /*vector 비우기*/
-        vec.clear();
     }
-    /*vector 메모리 해제*/
-    vector<int>().swap(vec);
+
     return 0;
 }

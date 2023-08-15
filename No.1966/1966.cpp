@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 int main () {
@@ -16,19 +17,22 @@ int main () {
 
         /*vector 입력*/
         for(int i = 0; i < docNum; i++){
-            cin >> a;
-            vec.push_back(a);
+             cin >> a;
+             vec.push_back(a);
         }
 
-        /*자신보다 뒤에 있는 요소중 우선순위 높은 게 있는지 검색*/
+        /*자신보다 우선순위가 높은게 있으면 뒤로 이동*/
         while(!vec.empty()){
-            
+            if(vec.front() < *max_element(vec.begin() + 1, vec.end())){
+                vec.push_back(vec.front());
+                vec.erase(vec.begin());
+            }
+            else{
+                cout << vec.front() << " ";
+                vec.erase(vec.begin());
+            }
         }
-
-        /*디버그 - vector 출력*/
-        for(int i = 0; i < docNum; i++){
-            cout << vec[i] << " ";
-        }
+        cout << "\n";
         /*vector 비우기*/
         vec.clear();
     }

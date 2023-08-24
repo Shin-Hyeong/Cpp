@@ -45,12 +45,14 @@ int main(){
     return 0;
 }
 
+//DFS는 스택을 사용한다. 재귀함수 또한 스택플로우에 쌓이는 형식이여서 재귀함수를 사용한다.
 void dfs(int x){
-    if(c[x]) return;
-    c[x] = true;
-    cout << x << " ";
-    for(int i = 0; i < a[x].size(); i++){
+    if(c[x]) return;    //방문한적이 있으면 되돌아감.
+    c[x] = true;        //방문한적이 없으면 true값을 줌.
+    cout << x << " ";   //처음 방문시 출력
+    for(int i = 0; i < a[x].size(); i++){ //처음 방문한 노드의 인접 노드 검색
         int y = a[x][i];
-        dfs(y);
+        dfs(y);         //방문한적이 있는지 없는지 재귀함수, 
+                        //있으면 다시 돌아와서 다음 인접노드를 검색, 없으면 해당 노드의 인접노드를 검색.
     }
 }

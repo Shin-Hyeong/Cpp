@@ -1,33 +1,39 @@
 #include <iostream>
 
 using namespace std;
-void dfs(int num ,int depth);
+void dfs(int num, int depth);
 
-int N,M;
-int arr[9]; //³ëµå ÀúÀå
-bool check[9]; //¹æ¹® È®ÀÎ
+int N, M;
+int arr[9];    // ë…¸ë“œ ì €ìž¥
+bool check[9]; // ë°©ë¬¸ í™•ì¸
 
-int main(){
+int main()
+{
     ios_base::sync_with_stdio(false);
-    cin.tie(NULL);cout.tie(NULL);
+    cin.tie(NULL);
+    cout.tie(NULL);
 
-    cin >> N >> M;  //4   2
+    cin >> N >> M; // 4   2
 
-    dfs(1, 0); //num(³ëµå ¹øÈ£), depth
+    dfs(1, 0); // num(ë…¸ë“œ ë²ˆí˜¸), depth
 
     return 0;
 }
 
-void dfs(int num, int depth){
-    if(depth == M){
-        for(int i = 0; i < M; i++){
+void dfs(int num, int depth)
+{
+    if (depth == M)
+    {
+        for (int i = 0; i < M; i++)
+        {
             cout << arr[i] << " ";
         }
         cout << "\n";
         return;
     }
-    for(int i = num; i <= N; i++){
-        arr[depth] = i; //³ëµå ÀúÀå             1,1    1,2     1,3     1,4
-        dfs(i, depth + 1); //´õ ±íÀÌ µé¾î°¨.    1       2      3       4
+    for (int i = num; i <= N; i++)
+    {
+        arr[depth] = i;    // ë…¸ë“œ ì €ìž¥             1,1    1,2     1,3     1,4
+        dfs(i, depth + 1); // ë” ê¹Šì´ ë“¤ì–´ê°.    1       2      3       4
     }
 }

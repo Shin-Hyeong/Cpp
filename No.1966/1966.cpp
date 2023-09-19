@@ -16,32 +16,32 @@ int main () {
     while(testNum--){
         count = 0;
         cin >> docNum >> order;
-        /*ť ����*/
+        /*큐 생성*/
         queue<pair<int, int>> que;
         priority_queue<int> priQue;
-        /*ť�� �켱���� �Է�*/
+        /*큐에 우선순위 입력*/
         for(int i = 0; i < docNum; i++){
             cin >> ipt;
             que.push({i, ipt});
             priQue.push(ipt);
         }
         while(!que.empty()){
-            /*ť�� �պκ� ����*/
+            /*큐의 앞부분 저장*/
             index = que.front().first;
             value = que.front().second;
             que.pop();
 
-            /*ť�� �켱������ ���ٸ� pop*/
+            /*큐와 우선순위가 같다면 pop*/
             if(priQue.top() == value){
                 priQue.pop();
                 count++;
-                /*�ñ��� �ε����� �����ϸ� ���*/
+                /*궁금한 인덱스와 동일하면 출력*/
                 if(index == order){
                     cout << count << "\n";
                     break;
                 }
             }
-            /*ť�� �켱������ �ٸ��� �ٽ� ť�� push*/
+            /*큐와 우선순위가 다르면 다시 큐에 push*/
             else que.push({index, value});
         }
     }

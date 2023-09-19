@@ -6,7 +6,7 @@ void dfs(int n);
 
 int N, M;
 int arr[MAX];
-bool check[MAX]; //Àü¿ªº¯¼ö¿©¼­ false·Î ÃÊ±âÈ­
+bool check[MAX]; //ì „ì—­ë³€ìˆ˜ì—¬ì„œ falseë¡œ ì´ˆê¸°í™”
 
 int main(){
     ios_base::sync_with_stdio(false);
@@ -29,11 +29,11 @@ void dfs(int depth){
     }
     else{
         for(int i = 1; i <= N; i++){
-            if(!check[i]){          //³ëµå¸¦ Ã³À½ ¹æ¹®ÇÑ´Ù¸é
-                check[i] = true;    //³ëµå¸¦ ¹æ¹®Çß´Ù°í Ç¥½Ã
-                arr[depth] = i;     //arr¹è¿­¿¡ depthÀ§Ä¡¿¡ ÀúÀå
-                dfs(depth + 1);     //depth + 1»óÅÂ·Î dfs´Ù½Ã È£Ãâ
-                check[i] = false;   //Àç±Í depth ÇÔ¼ö ÀÌÈÄ ¹æ¹®Çß´ø ³ëµå¸¦ ¹æ¹® Ç¥½Ã ÇØÁ¦
+            if(!check[i]){          //ë…¸ë“œë¥¼ ì²˜ìŒ ë°©ë¬¸í•œë‹¤ë©´
+                check[i] = true;    //ë…¸ë“œë¥¼ ë°©ë¬¸í–ˆë‹¤ê³  í‘œì‹œ
+                arr[depth] = i;     //arrë°°ì—´ì— depthìœ„ì¹˜ì— ì €ìž¥
+                dfs(depth + 1);     //depth + 1ìƒíƒœë¡œ dfsë‹¤ì‹œ í˜¸ì¶œ
+                check[i] = false;   //ìž¬ê·€ depth í•¨ìˆ˜ ì´í›„ ë°©ë¬¸í–ˆë˜ ë…¸ë“œë¥¼ ë°©ë¬¸ í‘œì‹œ í•´ì œ
             }
         }
     }

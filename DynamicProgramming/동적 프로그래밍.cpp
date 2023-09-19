@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// µ¿Àû ÇÁ·Î±×·¡¹Ö
+// ë™ì  í”„ë¡œê·¸ë˜ë°
 int fibonacci(int n);
 int f[100] = {0,};
 
@@ -31,7 +31,7 @@ int fibonacci(int n){
     }
 }
 
-/* µ¿ÀûÇÁ·Î±×·¡¹Ö X
+/* ë™ì í”„ë¡œê·¸ë˜ë° X
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL); cout.tie(NULL);

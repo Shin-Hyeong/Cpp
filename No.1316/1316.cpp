@@ -14,11 +14,11 @@ int main() {
         cin >> str;
         str1.clear();
         for(int j = 0; j < str.length(); j++){
-            if(str[j] != str[j + 1]){ //´ÙÀ½ ¾ËÆÄºªÀÌ ´Ù¸£¸é
-                str1.push_back(str[j]); //str1¹®ÀÚ¿­¿¡ str[j]Ãß°¡
+            if(str[j] != str[j + 1]){ //ë‹¤ìŒ ì•ŒíŒŒë²³ì´ ë‹¤ë¥´ë©´
+                str1.push_back(str[j]); //str1ë¬¸ìžì—´ì— str[j]ì¶”ê°€
             }
         }
-        // str1 ¹®ÀÚ¿­¿¡ µ¿ÀÏ ¹®ÀÚ°¡ ÀÖ´ÂÁö È®ÀÎ
+        // str1 ë¬¸ìžì—´ì— ë™ì¼ ë¬¸ìžê°€ ìžˆëŠ”ì§€ í™•ì¸
         for(int j = 0; j < str1.length() - 1; j++){
             for(int k = j + 1; k < str1.length(); k++){
                 if(str1[j] == str1[k]) r++;

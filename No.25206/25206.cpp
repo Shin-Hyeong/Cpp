@@ -19,7 +19,7 @@ int main()
         else if (score == "D+") totalScore += (1.5 * credit);
         else if (score == "D0") totalScore += (1.0 * credit);
         else if (score == "F") totalScore += 0;
-        //ÇĞÁ¡ P¿¡ ´ëÇÑ ¿¬»ê ÇÊ¿ä
+        //í•™ì  Pì— ëŒ€í•œ ì—°ì‚° í•„ìš”
     }
 
     cout.setf(ios::fixed);

@@ -14,21 +14,21 @@ int main () {
     for(int i = 0; i < name.size(); i++) alphabet[name[i] - 'A']++;
 
     for(int i = 0; i < 26; i++){
-        if(alphabet[i] > 0){ //¾ËÆÄºªÀÌ Á¸ÀçÇÏ¸é
-            if(alphabet[i] % 2 == 1){ // ¾ËÆÄºª °¹¼ö°¡ È¦¼ö ÀÌ¸é
-                mid_index = i; //Áß¾Ó¿¡ ÇØ´ç ¾ËÆÄºª ÀÔ·Â
-                alphabet[i]--; //alphabetÀ» Â¦¼ö·Î ¸¸µë
+        if(alphabet[i] > 0){ //ì•ŒíŒŒë²³ì´ ì¡´ì¬í•˜ë©´
+            if(alphabet[i] % 2 == 1){ // ì•ŒíŒŒë²³ ê°¯ìˆ˜ê°€ í™€ìˆ˜ ì´ë©´
+                mid_index = i; //ì¤‘ì•™ì— í•´ë‹¹ ì•ŒíŒŒë²³ ì…ë ¥
+                alphabet[i]--; //alphabetì„ ì§ìˆ˜ë¡œ ë§Œë“¬
                 error++;
             }
         }
     }
     
-    if(error > 1) cout << "I'm Sorry Hansoo\n"; //È¦¼öÀÎ ¾ËÆÄºªÀÌ 2°³ ÀÌ»óÀÌ¸é ½ÇÆĞ
+    if(error > 1) cout << "I'm Sorry Hansoo\n"; //í™€ìˆ˜ì¸ ì•ŒíŒŒë²³ì´ 2ê°œ ì´ìƒì´ë©´ ì‹¤íŒ¨
     else{
         string answer = "", temp = "";
         for(int i = 0; i < 26; i++){
-            if(alphabet[i] > 0){ //¾ËÆÄºªÀÌ Á¸ÀçÇÏ¸é
-                for(int j = 0; j < alphabet[i] / 2; j++){ //¾ËÆÄºªÀÇ °¹¼ö°¡ Â¦¼öÀÌ¸é
+            if(alphabet[i] > 0){ //ì•ŒíŒŒë²³ì´ ì¡´ì¬í•˜ë©´
+                for(int j = 0; j < alphabet[i] / 2; j++){ //ì•ŒíŒŒë²³ì˜ ê°¯ìˆ˜ê°€ ì§ìˆ˜ì´ë©´
                     answer += i + 'A';
                 }
             }

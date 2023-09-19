@@ -23,25 +23,25 @@ int main()
         numCount[arr[i] + 4000]++;
     }
 
-    /*»ê¼úÆò±Õ*/
+    /*ì‚°ìˆ í‰ê· */
     avg /= n; 
     avg > 0 ? avg += 0.5 : avg -= 0.5;
     cout << (int)avg << '\n';
 
-    /*Áß¾Ó°ª*/
+    /*ì¤‘ì•™ê°’*/
     sort(arr, arr + n, greater<>());
     cout << arr[n / 2] << '\n';
 
-    /*ÃÖºó°ª*/
+    /*ìµœë¹ˆê°’*/
     maxIndex = max_element(numCount.begin(), numCount.end()); 
 
-    if (*maxIndex != *max_element(maxIndex + 1/*maxIndexº¸´Ù Å« ¼ö*/, numCount.end()))
-    /*maxIndex ´ÙÀ½À¸·Î Å« ¼ö -> ÃÖºó°ªÁß µÎ¹øÂ°·Î ÀÛÀº °ª*/
+    if (*maxIndex != *max_element(maxIndex + 1/*maxIndexë³´ë‹¤ í° ìˆ˜*/, numCount.end()))
+    /*maxIndex ë‹¤ìŒìœ¼ë¡œ í° ìˆ˜ -> ìµœë¹ˆê°’ì¤‘ ë‘ë²ˆì§¸ë¡œ ì‘ì€ ê°’*/
         cout << (int)(maxIndex - numCount.begin()) - 4000 << "\n";
     else
         cout << (int)(max_element(maxIndex + 1, numCount.end()) - numCount.begin()) - 4000 << "\n";
     
-    /*¹üÀ§*/
+    /*ë²”ìœ„*/
     cout << arr[0] - arr[n - 1] << '\n';
 
     delete[] arr;

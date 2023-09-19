@@ -6,7 +6,7 @@ int main () {
     cin >> N >> M;
     int arr[N + 1] = {0}, temp[N + 1] = {0};
 
-    for(int a = 1; a <= N; a++) arr[a] = a; //arr ¹è¿­ ÃÊ±âÈ­
+    for(int a = 1; a <= N; a++) arr[a] = a; //arr ë°°ì—´ ì´ˆê¸°í™”
 
     for(int a = 0; a < M; a++){
         cin >> i >> j >> k;
@@ -17,12 +17,12 @@ int main () {
             temp[b] = arr[b];
         }
 
-        for(int b = k; b <= j; b++){ //mid ~ end±îÁö ÀçÁ¤·Ä
+        for(int b = k; b <= j; b++){ //mid ~ endê¹Œì§€ ìž¬ì •ë ¬
             arr[begin] = temp[b];
             begin++;
         }
 
-        for(int c = i; c < k; c++){ //begin ~ mid - 1±îÁö ÀçÁ¤·Ä
+        for(int c = i; c < k; c++){ //begin ~ mid - 1ê¹Œì§€ ìž¬ì •ë ¬
             arr[mid] = temp[c];
             mid++;
         }

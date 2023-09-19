@@ -12,23 +12,23 @@ int main() {
 
     vector<float> tape;
 
-    //Å×ÀÌÇÁ ±¸°£ ±¸ÇÏ±â
+    //í…Œì´í”„ êµ¬ê°„ êµ¬í•˜ê¸°
     for(int i = 0; i < N; i++){
         cin >> Num;
 
-        tape.push_back(Num - 0.5); // ±¸¸Û Àü
-        tape.push_back(Num); //±¸¸Û
-        tape.push_back(Num + 0.5); //±¸¸Û ÈÄ
+        tape.push_back(Num - 0.5); // êµ¬ë© ì „
+        tape.push_back(Num); //êµ¬ë©
+        tape.push_back(Num + 0.5); //êµ¬ë© í›„
     }
 
-    // ±¸°£ Á¤·Ä
+    // êµ¬ê°„ ì •ë ¬
     sort(tape.begin(),tape.end());
 
-    for(int i = 0; i < tape.size(); i++){ //Å×ÀÌÇÁ ½ÃÀÛÀ§Ä¡
+    for(int i = 0; i < tape.size(); i++){ //í…Œì´í”„ ì‹œì‘ìœ„ì¹˜
         for(int j = i + 1; j < tape.size(); j++){
-            if(tape[i] + L >= tape[j]){ //ÇÑ¹ø¿¡ µ¤¾îÁö´Â À§Ä¡ ±¸ÇÏ±â
-                tape[j] = tape[i]; //°°Àº Å×ÀÌÇÁ »ç¿ëÇÏ¸é °°Àº ¼ıÀÚ·Î º¯°æ
-                i = j; //µ¤Àº ±¸°£Àº ÆĞ½º
+            if(tape[i] + L >= tape[j]){ //í•œë²ˆì— ë®ì–´ì§€ëŠ” ìœ„ì¹˜ êµ¬í•˜ê¸°
+                tape[j] = tape[i]; //ê°™ì€ í…Œì´í”„ ì‚¬ìš©í•˜ë©´ ê°™ì€ ìˆ«ìë¡œ ë³€ê²½
+                i = j; //ë®ì€ êµ¬ê°„ì€ íŒ¨ìŠ¤
             }
         }
     }
@@ -53,38 +53,38 @@ int main() {
 
 //     vector<float> tape;
 
-//     // Å×ÀÌÇÁ ±¸°£ ±¸ÇÏ±â
+//     // í…Œì´í”„ êµ¬ê°„ êµ¬í•˜ê¸°
 //     for (int i = 0; i < N; i++)
 //     {
 //         cin >> Num;
 
-//         tape.push_back(Num - 0.5); // ±¸¸Û Àü
-//         tape.push_back(Num);       // ±¸¸Û
-//         tape.push_back(Num + 0.5); // ±¸¸Û ÈÄ
+//         tape.push_back(Num - 0.5); // êµ¬ë© ì „
+//         tape.push_back(Num);       // êµ¬ë©
+//         tape.push_back(Num + 0.5); // êµ¬ë© í›„
 //     }
-//     cout << "¼öÁ¤ Àü : ";
+//     cout << "ìˆ˜ì • ì „ : ";
 //     for (int i = 0; i < tape.size(); i++)
 //     {
 //         cout << tape[i] << " ";
 //     }
 //     cout << "\n";
-//     // ±¸°£ Á¤·Ä
+//     // êµ¬ê°„ ì •ë ¬
 //     sort(tape.begin(), tape.end());
 
 //     for (int i = 0; i < tape.size(); i++)
-//     { // Å×ÀÌÇÁ ½ÃÀÛÀ§Ä¡
+//     { // í…Œì´í”„ ì‹œì‘ìœ„ì¹˜
 //         for (int j = i + 1; j < tape.size(); j++)
 //         {
 //             if (tape[i] + L >= tape[j])
-//             {                      // ÇÑ¹ø¿¡ µ¤¾îÁö´Â À§Ä¡ ±¸ÇÏ±â
-//                 tape[j] = tape[i]; // °°Àº Å×ÀÌÇÁ »ç¿ëÇÏ¸é °°Àº ¼ıÀÚ·Î º¯°æ
-//                 i = j;             // µ¤Àº ±¸°£Àº
+//             {                      // í•œë²ˆì— ë®ì–´ì§€ëŠ” ìœ„ì¹˜ êµ¬í•˜ê¸°
+//                 tape[j] = tape[i]; // ê°™ì€ í…Œì´í”„ ì‚¬ìš©í•˜ë©´ ê°™ì€ ìˆ«ìë¡œ ë³€ê²½
+//                 i = j;             // ë®ì€ êµ¬ê°„ì€
 //             }
 //         }
-//         cout << "Å×ÀÌÇÁ ½ÃÀÛÇÏ´Â À§Ä¡ : " << tape[i] << "\n";
-//         cout << "Å×ÀÌÇÁ ³¡³ª´Â À§Ä¡ : " << tape[i] + L << "\n";
+//         cout << "í…Œì´í”„ ì‹œì‘í•˜ëŠ” ìœ„ì¹˜ : " << tape[i] << "\n";
+//         cout << "í…Œì´í”„ ëë‚˜ëŠ” ìœ„ì¹˜ : " << tape[i] + L << "\n";
 //     }
-//     cout << "¼öÁ¤ ÈÄ : ";
+//     cout << "ìˆ˜ì • í›„ : ";
 //     for (int i = 0; i < tape.size(); i++)
 //     {
 //         cout << tape[i] << " ";

@@ -12,15 +12,15 @@ int main () {
 
     for(int i = 0; i < M; i++){
         cin >> price[i][0] >> price[i][1];
-        //ÃÖÀú°¡ ÆÐÅ°Áö °Ë»ö
+        //ìµœì €ê°€ íŒ¨í‚¤ì§€ ê²€ìƒ‰
         if(lowPackage > price[i][0]) lowPackage = price[i][0];
-        //ÃÖÀú°¡ ³¹°³ °Ë»ö
+        //ìµœì €ê°€ ë‚±ê°œ ê²€ìƒ‰
         if(lowPiece > price[i][1]) lowPiece = price[i][1];
     }
-    //ÆÐÅ°Áö¿Í ³¹°³ 6°³ °¡°Ý ºñ±³
+    //íŒ¨í‚¤ì§€ì™€ ë‚±ê°œ 6ê°œ ê°€ê²© ë¹„êµ
     if(lowPackage < lowPiece * 6) lowPrice = lowPackage * (N / 6);
     else lowPrice = lowPiece * 6 * (N / 6);
-    //ÆÐÅ°Áö¿Í ³¹°³ 6 % N °¡°Ý ºñ±³
+    //íŒ¨í‚¤ì§€ì™€ ë‚±ê°œ 6 % N ê°€ê²© ë¹„êµ
     if(lowPackage < lowPiece * (N % 6)) lowPrice += lowPackage;
     else lowPrice += lowPiece * (N % 6);
 
